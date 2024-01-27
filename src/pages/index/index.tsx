@@ -16,11 +16,17 @@ import { getStore } from "@/simpleStore";
 
 import styles from "./index.module.less";
 
+import img01 from '@/assets/01.png'
+import img02 from '@/assets/02.png'
+import img03 from '@/assets/03.png'
+import img04 from '@/assets/04.png'
+import img05 from '@/assets/05.png'
+
 const list = [
   {
     id: 1,
     title: "感觉这姐一点也不上镜头啊",
-    url: "http://sns-webpic-qc.xhscdn.com/202401041851/21beeca6197e742556f9edc0dac0b477/1040g2sg30savf62j2s005no9auk0881cmt61v5o!nc_n_webp_mw_1",
+    url: img01,
     top: 0,
     left: 0,
     width: 0,
@@ -29,7 +35,7 @@ const list = [
   {
     id: 2,
     title: "留学生深夜痛哭",
-    url: "http://sns-webpic-qc.xhscdn.com/202401041851/fd56230a1ea4d67e33785f1f10eb04a6/1040g2sg30s5qoc3gik005onkit67jtb7amed01o!nc_n_webp_mw_1",
+    url: img02,
     top: 0,
     left: 0,
     width: 0,
@@ -38,7 +44,7 @@ const list = [
   {
     id: 3,
     title: "热巴小时候",
-    url: "http://sns-webpic-qc.xhscdn.com/202401042233/c6da49f45ce097589f27b160e92e7744/1040g2sg30s74c5dk2m6g5p7vrc7giarl1g09st8!nc_n_webp_mw_1",
+    url: img03,
     top: 0,
     left: 0,
     width: 0,
@@ -47,7 +53,7 @@ const list = [
   {
     id: 4,
     title: "我发现上海公交一个有趣的现象",
-    url: "http://sns-webpic-qc.xhscdn.com/202401041851/6ac71a77efea7dae4e6dd0518aceedc7/1040g00830t4k3sklk0704a4h8bd3k4vdqsrvh68!nc_n_webp_mw_1",
+    url: img05,
     top: 0,
     left: 0,
     width: 0,
@@ -56,7 +62,7 @@ const list = [
   {
     id: 5,
     title: "其实PAPI的现状对我来说就已经是发财了",
-    url: "http://sns-webpic-qc.xhscdn.com/202401041851/e3aef6d8dbe35fe1e4e0565cab781d9d/1040g00830sl7i70g40005nadi0o44iqtnmfvvp0!nc_n_webp_mw_1",
+    url: img01,
     top: 0,
     left: 0,
     width: 0,
@@ -65,7 +71,7 @@ const list = [
   {
     id: 6,
     title: "在摸土豆的时候突然...",
-    url: "http://sns-webpic-qc.xhscdn.com/202401041851/2ff70ad31daf8423251b8102fb6c0783/1040g00830t9ntkp546605n31l03ms2fe3gkd40g!nc_n_webp_mw_1",
+    url: img02,
     top: 0,
     left: 0,
     width: 0,
@@ -74,7 +80,7 @@ const list = [
   {
     id: 7,
     title: "其实PAPI的现状对我来说就已经是发财了",
-    url: "http://sns-webpic-qc.xhscdn.com/202401041851/3b8c69de2bdfa734d21274d8374ea097/1040g00830sc4evhk3c004a764euq4m3rdc71r0o!nc_n_webp_mw_1",
+    url: img03,
     top: 0,
     left: 0,
     width: 0,
@@ -83,7 +89,7 @@ const list = [
   {
     id: 8,
     title: "美国人同学说我用美颜相机拍照，好像是另一个人",
-    url: "http://sns-webpic-qc.xhscdn.com/202401041851/c55a6670463bbb04d70ae4e5d5558a06/1040g2sg30sr86d2tka00491qi8auam25guciru0!nc_n_webp_mw_1",
+    url: img04,
     top: 0,
     left: 0,
     width: 0,
@@ -92,7 +98,7 @@ const list = [
   {
     id: 10,
     title: "又一位劝不动的客妹😂",
-    url: "http://sns-webpic-qc.xhscdn.com/202401041920/733b5a7280744b941ca11cc0d5bcb71b/1040g00830s8ei7892k0g48q495dipfjdva836eo!nc_n_webp_mw_1",
+    url: img01,
     top: 0,
     left: 0,
     width: 0,
@@ -101,7 +107,7 @@ const list = [
   {
     id: 11,
     title: "乐山大佛：修复前后对比，一比吓一跳",
-    url: "http://sns-webpic-qc.xhscdn.com/202401041920/138a8467336a13d08523e60e0b92c276/1040g2sg30t4enior3u6g5pb0dp14fg2abvojl58!nc_n_webp_mw_1",
+    url: img05,
     top: 0,
     left: 0,
     width: 0,
@@ -212,8 +218,9 @@ export default function Index() {
         <View style={{ display: "none" }}>
           {list.map((item, index) => (
             <Image
-              key={item.url}
+              key={index}
               src={item.url}
+              webp={true}
               style={{ display: "none" }}
               onLoad={(event: BaseEventOrig) => updateFlowItem(event, index)}
             />
